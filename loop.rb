@@ -27,9 +27,13 @@
 # puts "Entered value is:#{val}"
 #
 
+(1..20).each do |i|
+ puts i
+end
+
 def warp(str, cols)
   result = ''
-  while str.length > cols
+  while str.length > cols do
     result = result.concat(str[0...cols].concat("\n"))
     str = str[cols..str.length]
   end
