@@ -31,6 +31,15 @@ module NumFormatter
       100 => 'hundred',
   }
 
+  SEG_MAP ={
+      1 => 'thousand',
+      2 => 'million',
+      3 => 'billion',
+      4 => 'trillion',
+      5 => 'quadrillion',
+      6 => 'quintillion'
+  }
+
   def self.to_segments(num)
     arr = []
 
@@ -61,6 +70,31 @@ module NumFormatter
     end
 
     result.join(' ')
+  end
+
+  def self.num_to_words(num)
+
+    if num == 0
+      return NUM_MAP[0]
+    end
+
+    segments = to_segments(num)
+
+    segments.each_with_index.inject([]) do |result, (seg_num, index)|
+
+      position = segments.length - index - 1
+
+      if position == 0
+        if seg_num != 0
+          result << "#{to_words(seg_num)}"
+        end
+      else
+        result << "#{to_words(seg_num)} #{SEG_MAP[position]}"
+      end
+
+      result
+    end.join(', ')
+
   end
 
 end
