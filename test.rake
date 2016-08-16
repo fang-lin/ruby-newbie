@@ -1,4 +1,13 @@
 namespace :test do
+
+  desc 'run auto_wrap tests'
+  task :auto_wrap, :environment do
+    Rake::TestTask.new(:auto_wrap) do |t|
+      t.test_files = FileList['auto_wrap/*_spec.rb']
+    end
+    Rake::Task[:auto_wrap].execute
+  end
+
   desc 'run fizz buzz tests'
   task :fizz_buzz, :environment do
     Rake::TestTask.new(:fizz_buzz) do |t|
@@ -16,7 +25,7 @@ namespace :test do
   end
 
   desc 'run all tests'
-  task all: [:fizz_buzz, :num_to_words]
+  task all: [:auto_wrap, :fizz_buzz, :num_to_words]
 end
 
 desc 'run all tests'

@@ -1,6 +1,6 @@
-class Fizz_buzz
+module Fizz_buzz
 
-  def fizz_buzz(num)
+  def self.fizz_buzz(num)
     if num % 15 == 0 or "#{num}".index('3') != nil and "#{num}".index('5') != nil
       "FizzBuzz"
     elsif num % 3 == 0 or "#{num}".index('3') != nil
@@ -12,7 +12,7 @@ class Fizz_buzz
     end
   end
 
-  def fizz_buzz_for_list(arr)
+  def self.fizz_buzz_for_list(arr)
     arr.map.collect { |i|
       fizz_buzz(i)
     }
