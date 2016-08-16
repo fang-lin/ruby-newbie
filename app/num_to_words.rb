@@ -88,7 +88,7 @@ module Num_to_words
         if seg_num != 0
           result << "#{to_words(seg_num)}"
         end
-      else
+      elsif seg_num != 0
         result << "#{to_words(seg_num)} #{SEG_MAP[position]}"
       end
 
