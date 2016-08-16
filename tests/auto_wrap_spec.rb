@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative 'auto_wrap'
+require_relative '../app/auto_wrap'
 
 class Test_auto_wrap < Minitest::Test
 

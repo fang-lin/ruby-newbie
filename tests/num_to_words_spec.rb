@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative 'num_to_words'
+require_relative '../app/num_to_words'
 
 class Test_num_to_words< Minitest::Test
 
