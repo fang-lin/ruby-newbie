@@ -1,4 +1,4 @@
-module NumFormatter
+module Num_to_words
   NUM_MAP = {
       0 => 'zero',
       1 => 'one',
